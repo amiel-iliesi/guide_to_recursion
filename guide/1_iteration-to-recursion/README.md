@@ -51,7 +51,8 @@ The loop call, AKA the recursive call, happens on line 38, and this is how recur
 
 We aren't using all of our options, because we don't really do anything before or after our loop, but they *are* options.
 
-When a function call happens, the running of the function will pause until that function is completed (see ![recursion pause](./recursion_pause.png)). Then anything you put before or after this call will happen before or after the call.
+When a function call happens, the running of the function will pause until that function is completed.Then anything you put before or after this call will happen before or after the call.
+![recursion pause](./recursion_pause.png)
 
 The case where we no longer loop, has a special name. It is called a **base case**. You can actually have multiple reasons to exit a recursive loop, just like in an iterative loop. This also means you can have multiple base cases. The analogy between iteration and recursion for this idea is loop exit conditions, VS. recursive base cases.
 
