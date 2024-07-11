@@ -105,3 +105,5 @@ bool Tree::contains(const Node* current_node, int datum) const {
 	return left_contains or right_contains;
 }
 ```
+
+..and that's the whole function! Just like magic! None of the crazy backtracking, or weird function logic that iteration would have us do. Recursion thrives in cases where we have to iterate in a patterend way.
