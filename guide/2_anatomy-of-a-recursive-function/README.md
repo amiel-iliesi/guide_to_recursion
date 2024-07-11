@@ -58,9 +58,29 @@ void f(int& a, int& x) {
 
 ## Trees, Base Cases, Shape: Intuition
 
-Recursion doesn't make much intuative sense until we tackle something that iteration isn't prepared to handle. Unfortunately that means that we have to come up with an example that isn't so simple. The simplest such case is a binary tree.
+Recursion doesn't make much intuitive sense until we tackle something that iteration isn't prepared to handle. Unfortunately that means that we have to come up with an example that isn't so simple. The simplest such case is a binary tree.
 
 Let's think of a binary tree, and try and solve a problem iteratively. We will fail, but we can then solve it recursively and begin to see the magic.\
 ![tree contains](./figures/tree_contains.png)
 
+Let's say we wanted to formalize a function that can tell us if a number is in the tree or not. For example, if we asked if the tree contains the number `9` it would return `false`, but `7` would return true. How would we do that with iteration? If we start at 1:
 
+* Check if left is a 7?
+* Check if right is a 7?
+
+Then what? If we go down the left side, we lose the right side. We can't just nest another loop to check the next level, because we don't know how many levels there are. If we just keep going left, then we can't come back later and check out the other side... that is, not without recursion. Remember, recursion lets us pause our functions, it lets us enter the loop multiple times, and it lets us do stuff after we recurse. In iteration we can't just pause, check out the left side, then check out the right side after, but recursion lets us do exactly that.
+
+It might help to think of iteration as following a path. You add a counter, change a condition, and move towards a certain goal. You head in a direction, until you reach it or fail somehow.
+
+Recursion is different. If iteration is following a path, then recursion is more like checking a shape. You perform your logic on your current loop, but then you recurse to fit the shape of the path you're traveling.
+
+This becomes more clear if we solve the above problem with recursion, let's work through it, step-by-step:
+
+1. Identify our base case(s):
+  * We aren't in a `Node` anymore (this is like reaching `nullptr` in a regular list; end of the line)
+  * We found the number we're looking for!
+2. Identify how we are recursing, what shape are we checking?
+  * We are searching a tree, we have to check the left and right
+
+Because of this shape, we typically abstract a tree to it's base "shape", a Node, left subtree, and right subtree:\
+![tree abstraction](./figures/tree_abstraction.png)
