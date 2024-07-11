@@ -84,3 +84,24 @@ This becomes more clear if we solve the above problem with recursion, let's work
 
 Because of this shape, we typically abstract a tree to it's base "shape", a Node, left subtree, and right subtree:\
 ![tree abstraction](./figures/tree_abstraction.png)
+
+Notice how the tree contains trees on the left and right. Recursion is perfectly suited to problems that have self-similarity, or regular patterns like this.
+
+Now that we've identified the anatomy of our recursive problem, lets put them together:
+```c++
+bool Tree::contains(const Node* current_node, int datum) const {
+	if (current_node == nullptr) { // base case 1: failed to find
+		return false;
+	}
+	if (current_node->data == datum) { // base case 2: succeeded in finding!
+		return true;
+	}
+
+	// recursive calls, check left, then check right
+	bool left_contains = contains(current_node->left, datum);
+	bool right_contains = contains(current_node->right, datum);
+
+	// function logic: return true if any side contained the value (..so use *or*)
+	return left_contains or right_contains;
+}
+```
