@@ -105,7 +105,7 @@ Iteration is **incapable** of doing this.
 In the above diagram, the first action can do the other two loops, return to it's own loop after pausing, and do more actions!
 
 Please take your time to make sure that above diagram makes sense to you. You don't have to understand how to implement it yet, just recognize what the diagram is saying. Having this intuition about recursion is crucially important to using it where it's appropriate. Here is an alternative diagram illustrating this same idea:\
-![recursion diagram](./.figures/recursion_diagram.png).
+![recursion diagram](./figures/recursion_diagram.png).
 
 If you notice how the recursive diagram looks like a "stack" of functions, that's because it's actually a pretty good analogy, and that's what people refer to when they mean "the stack". Your operating system calls and returns from functions recursively.
 
