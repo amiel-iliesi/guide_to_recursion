@@ -38,21 +38,21 @@ Base cases are a core component of recursion. Recursion can balloon out of hand 
 As an example for a point of comparison, an iterative condition, and base cases in recursion can be equivalently written like so:
 ```c++
 while ((a > 5) and not Even(x)) {
-	a -= 1;
-	++x;
+    a -= 1;
+    ++x;
 }
 ```
 
 ...and we could write our recursive function like this:
 ```c++
 void f(int& a, int& x) {
-	if (a <= 5)
-		break;
-	if (Even(x))
-		break;
+    if (a <= 5)
+        break;
+    if (Even(x))
+        break;
 
-	a -= 1;
-	++x;
+    a -= 1;
+    ++x;
     f(a, x);
 }
 ```
@@ -91,19 +91,19 @@ Notice how the tree contains trees on the left and right. Recursion is perfectly
 Now that we've identified the anatomy of our recursive problem, lets put them together:
 ```c++
 bool Tree::contains(const Node* current_node, int datum) const {
-	if (current_node == nullptr) { // base case 1: failed to find
-		return false;
-	}
-	if (current_node->data == datum) { // base case 2: succeeded in finding!
-		return true;
-	}
+    if (current_node == nullptr) { // base case 1: failed to find
+        return false;
+    }
+    if (current_node->data == datum) { // base case 2: succeeded in finding!
+        return true;
+    }
 
-	// recursive calls, check left, then check right
-	bool left_contains = contains(current_node->left, datum);
-	bool right_contains = contains(current_node->right, datum);
+    // recursive calls, check left, then check right
+    bool left_contains = contains(current_node->left, datum);
+    bool right_contains = contains(current_node->right, datum);
 
-	// function logic: return true if any side contained the value (..so use *or*)
-	return left_contains or right_contains;
+    // function logic: return true if any side contained the value (..so use *or*)
+    return left_contains or right_contains;
 }
 ```
 
