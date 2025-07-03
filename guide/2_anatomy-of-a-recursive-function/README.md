@@ -53,6 +53,7 @@ void f(int& a, int& x) {
 
 	a -= 1;
 	++x;
+    f(a, x);
 }
 ```
 
