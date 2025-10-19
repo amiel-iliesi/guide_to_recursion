@@ -76,7 +76,7 @@ int main()
 
 // -implementations----------------------------------
 // -predefined function implementations- - - - - - - 
-// (you can safely ignore this whole section, left in in-case you were curious)
+// (you can safely ignore this whole section, left in case you were curious)
 Tree::Tree()
 {
 	root = nullptr;
