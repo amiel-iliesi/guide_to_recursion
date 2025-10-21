@@ -39,14 +39,6 @@ This change might be to increment, decrement, or change the variable in any othe
 
 ## Recursion Introduction
 
-### Preface
-
-In order to avoid giving you too much information all at once, I will start you off with a lie about recursion; a lie of omission. I will oversimplify it, and gradually introduce more detail, until you have a more complete understanding of it.
-
-I will let you know when I'm oversimplifying, either explicitly, or by a qualification, like:
-> "Using recursion in this way *is like*..."
-But any oversimplifications will be cleared up further in the guide.
-
 ### How It Works (In-General)
 
 As an overly simple look at recursion, it works much like iteration, but has the following general differences:
